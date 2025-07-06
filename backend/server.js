@@ -166,7 +166,6 @@ const io = new Server(server, {
   }
 });
 
-
 // Middleware
 app.use(cors({
   origin: "http://localhost:5173", // your frontend's origin
