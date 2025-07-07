@@ -6,7 +6,6 @@ import { Search, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../utils/api.js";
 
-// fetch(`${BASE_URL}/api/your-endpoint`);
 
 
 const AllUsers = ({ users, onSelectUser, currentUserId, onlineUsersList }) => {

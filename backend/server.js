@@ -157,21 +157,35 @@ conncetDB();
 //  Create HTTP server (for Socket.IO to hook into)
 const server = http.createServer(app);
 
+
+
+
+
+// Middleware
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://mern-stack-online-chat-app.onrender.com"
+  ],
+  credentials: true,
+}));
+app.use(express.json());
+
+
 //  Setup Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173", 
+      "https://mern-stack-online-chat-app.onrender.com"
+    ],
     methods: ["GET", "POST"],
     credentials: true
   }
 });
 
-// Middleware
-app.use(cors({
-  origin: "http://localhost:5173", // your frontend's origin
-  credentials: true,               //  allow cookies/session headers
-}));
-app.use(express.json());
+
+
 
 // Routes
 
