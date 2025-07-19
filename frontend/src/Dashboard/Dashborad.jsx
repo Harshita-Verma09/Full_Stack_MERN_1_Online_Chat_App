@@ -1,142 +1,3 @@
-// import { jwtDecode } from "jwt-decode";
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-// import LeftSide from "./LeftSide/AllUsers";
-// import ChatMessages from "./RightSide/Messages.jsx";
-// import { io } from "socket.io-client";
-
-// const Dashboard = () => {
-//   const [users, setUsers] = useState([]);
-//   const [selectedUser, setSelectedUser] = useState(null);
-//   const [currentUserId, setCurrentUserId] = useState(null);
-//   const [socket, setSocket] = useState(null);
-//   const [onlineUsers, setOnlineUsers] = useState([]);
-//   const [onlineUsersList, setOnlineUsersList] = useState([]);
-
-
-//   // Load token, userId, fetch users, initialize socket
-//   useEffect(() => {
-//     const token = localStorage.getItem("token");
-//     if (!token) return;
-
-//     const decoded = jwtDecode(token);
-//     setCurrentUserId(decoded.id);
-
-//     const fetchUsersAndMe = async () => {
-//       try {
-//         const usersRes = await axios.get("http://localhost:3000/api/message/all-users", {
-//           headers: {
-//             Authorization: `Bearer ${token}`,
-//           },
-//         });
-//         setUsers(usersRes.data.data);
-//       } catch (err) {
-//         console.error("Failed to fetch users", err);
-//       }
-//     };
-
-//     fetchUsersAndMe();
-
-//     const newSocket = io("http://localhost:3000", {
-//       auth: { token },
-//       // auth: { token: localStorage.getItem("token") }, // Ensure token is valid
-//     });
-
-//     setSocket(newSocket);
-
-//     return () => {
-//       newSocket.disconnect();
-//     };
-//   }, []);
-
-//   //  Track online users
-//   useEffect(() => {
-//     if (!socket || !currentUserId) return;
-
-//     socket.emit("join", currentUserId); // <-- 👈 USE "join"
-//     socket.on("getUsers", (users) => {
-//       const userIds = users.map((u) => u.userId);
-//       setOnlineUsers(userIds);
-//     });
-
-//     return () => {
-//       // socket.off("getUsers");
-//       socket.disconnect();
-//     };
-//   }, [socket, currentUserId]);
-
-//   //  Persist selected user in localStorage
-//   const handleUserSelect = (user) => {
-//     setSelectedUser(user);
-//     localStorage.setItem("selectedUser", JSON.stringify(user));
-//   };
-
-//   //  Restore selected user from localStorage on mount
-//   useEffect(() => {
-//     const storedUser = localStorage.getItem("selectedUser");
-//     if (storedUser) {
-//       setSelectedUser(JSON.parse(storedUser));
-//     }
-//   }, []);
-
-//   return (
-//     <div className="flex min-h-screen">
-//       <LeftSide
-//         // users={users}
-//         // onSelectUser={handleUserSelect}
-//         // currentUserId={currentUserId}
-//         // selectedUser={selectedUser}
-//         // onlineUsers={onlineUsers}
-//         // onlineUsersList={onlineUsersList}
-//         // setOnlineUsersList={setOnlineUsersList}
-
-//         users={users}
-//         onSelectUser={handleUserSelect}
-//         currentUserId={currentUserId}
-//         onlineUsers={onlineUsers}
-//         onlineUsersList={onlineUsersList}  // <- Yeh redundant lag raha hai
-//         setOnlineUsersList={setOnlineUsersList}
-//         selectedUser={selectedUser}
-
-//       />
-//       {selectedUser ? (
-//         <ChatMessages
-//           selectedUser={selectedUser}
-//           currentUserId={currentUserId}
-//           socket={socket}
-//           onlineUsers={onlineUsers}
-//           onlineUsersList={onlineUsersList}
-//           setOnlineUsersList={setOnlineUsersList}
-//         />
-//       ) : (
-//         <div className="flex-1 flex items-center justify-center text-gray-400 text-lg">
-//           Select a user to start chatting
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Dashboard;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import { jwtDecode } from "jwt-decode";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -226,7 +87,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col w-full h-screen overflow-hidden">
-      {/* ✅ Mobile Top Navbar */}
+      {/* Mobile Top Navbar */}
       {isMobileView && (
         <div className="flex justify-between items-center 
  bg-purple-950 backdrop-blur-md border border-white/20 
@@ -248,9 +109,9 @@ const Dashboard = () => {
         </div>
       )}
 
-      {/* ✅ Main Layout */}
+      {/* Main Layout */}
       <div className="flex flex-1 flex-row w-full h-full overflow-hidden">
-        {/* ✅ LEFT PANEL */}
+        {/* LEFT PANEL */}
         {(!isMobileView || activePanel === "left") && (
           <div
             className={`
@@ -270,7 +131,7 @@ const Dashboard = () => {
           </div>
         )}
 
-        {/* ✅ RIGHT PANEL */}
+        {/* RIGHT PANEL */}
         {(!isMobileView || activePanel === "right") && (
           <div
             className={`

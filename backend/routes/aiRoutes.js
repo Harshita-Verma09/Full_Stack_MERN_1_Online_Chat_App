@@ -1,5 +1,5 @@
 import express from "express";
-import { talkToAI, getAIHistory } from "../controllers/aiController.js"; // ✅ Add .js
+import { talkToAI, getAIHistory } from "../controllers/aiController.js"; //Add .js
 
 const router = express.Router();
 

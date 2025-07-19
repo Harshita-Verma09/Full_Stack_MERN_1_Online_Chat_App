@@ -4,8 +4,8 @@ import Group from "../models/groupModel.js";
 
 // const sendGroupMessage = async (req, res) => {
 //   const { senderName, text } = req.body;
-//   const groupName = decodeURIComponent(req.params.groupName); // ✅ Get from URL
-//   console.log("Group members: ✅", groupName);
+//   const groupName = decodeURIComponent(req.params.groupName); // Get from URL
+//   console.log("Group members: ", groupName);
 //   console.log("Sender Name:", senderName);
 
 //   try {
@@ -58,7 +58,7 @@ const sendGroupMessage = async (req, res) => {
     const group = await Group.findOne({ name: groupName });
     if (!group) return res.status(404).json({ error: "Group not found" });
 
-    // 🔒 Check if sender is either a member or the admin
+    // Check if sender is either a member or the admin
     const isMember = group.members.includes(sender._id);
     const isAdmin = group.admin?.toString() === sender._id.toString();
 
@@ -82,14 +82,14 @@ const sendGroupMessage = async (req, res) => {
       sentAt: message.createdAt,
     });
   } catch (err) {
-    console.error("❌ Error in sendGroupMessage:", err);
+    console.error(" Error in sendGroupMessage:", err);
     res.status(500).json({ error: "Failed to send message" });
   }
 };
 
 
 
-// ✅ Replace this version of getGroupMessages
+//  Replace this version of getGroupMessages
 const getGroupMessages = async (req, res) => {
   const { groupName } = req.params;
 
@@ -109,9 +109,9 @@ const getGroupMessages = async (req, res) => {
       sentAt: msg.createdAt,
     }));
 
-    res.status(200).json({ messages: formattedMessages }); // ✅ Important to return in { messages: [...] }
+    res.status(200).json({ messages: formattedMessages }); //  Important to return in { messages: [...] }
   } catch (err) {
-    console.error("❌ Error in getGroupMessages:", err);
+    console.error(" Error in getGroupMessages:", err);
     res.status(500).json({ error: "Failed to fetch messages" });
   }
 };

@@ -20,7 +20,7 @@ const messageSchema = new mongoose.Schema({
         type: Boolean,
         default: false 
         },
-}, { timestamps: true }); // ✅ This adds createdAt & updatedAt automatically
+}, { timestamps: true }); // This adds createdAt & updatedAt automatically
 
 export default mongoose.model("Message", messageSchema);
 

@@ -16,10 +16,10 @@ const protect = async (req, res, next) => {
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
 
-        const user = await User.findById(decoded.id).select("-password"); // ✅ User model se find
+        const user = await User.findById(decoded.id).select("-password"); // User model se find
         if (!user) return next(new AppError("User not found", 404));
 
-        req.user = user; // ✅ Yahaan req.user assign ho gaya
+        req.user = user; // Yahaan req.user assign ho gaya
         next();
     } catch (err) {
         next(new AppError("Invalid token", 401));

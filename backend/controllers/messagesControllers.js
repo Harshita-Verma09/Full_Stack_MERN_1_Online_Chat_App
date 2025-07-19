@@ -2,7 +2,7 @@ import User from "../models/userModels.js"
 import Message from "../models/messageModel.js";
 import sendResponse from "../utils/sendResponse.js";
 import AppError from "../utils/AppError.js";
-import mongoose from "mongoose"; // 👈 This line is missing
+import mongoose from "mongoose"; // This line is missing
 
 
 //Basic Send Message
@@ -18,7 +18,7 @@ export const sendMessage = async (req, res, next) => {
             read: false,
         });
 
-        // ✅ Populate sender and receiver fields
+        //Populate sender and receiver fields
         const fullMessage = await message.populate("sender receiver");
 
         sendResponse(res, 201, true, "Message sent", fullMessage);

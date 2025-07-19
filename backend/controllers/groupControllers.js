@@ -60,14 +60,14 @@ const addMember = async (req, res) => {
       return res.status(403).json({ error: "Only admin can add members" });
     }
 
-    // 🔐 Check max members (10 including admin)
+    // Check max members (10 including admin)
     const uniqueMemberIds = new Set(group.members.map(id => id.toString()));
     uniqueMemberIds.add(group.admin.toString()); // ensure admin is counted
     if (uniqueMemberIds.size >= 10) {
       return res.status(400).json({ error: "Group cannot have more than 10 members" });
     }
 
-    // ✅ Add if not already in group
+    // Add if not already in group
     if (!group.members.includes(member._id)) {
       group.members.push(member._id);
       await group.save();
@@ -172,7 +172,7 @@ const getMyGroups = async (req, res) => {
 
     res.status(200).json({ groups });
   } catch (err) {
-    console.error("❌ Error in getMyGroups:", err.message);
+    console.error(" Error in getMyGroups:", err.message);
     res.status(500).json({ error: "Failed to fetch groups" });
   }
 };

@@ -8,7 +8,7 @@ import sendEmail from "../utils/sendEmail.js";
 const JWT_SECRET = process.env.JWT_SECRET || "secret";
 
 
-// // ✅ Register User
+// Register User
 const registerUser = async (req, res, next) => {
     const { name, email, password } = req.body;
 
@@ -41,7 +41,7 @@ const registerUser = async (req, res, next) => {
     }
 };
 
-// ✅ OTP Verification
+//OTP Verification
 const verifyOTP = async (req, res, next) => {
     const { email, otp } = req.body;
 
@@ -65,7 +65,7 @@ const verifyOTP = async (req, res, next) => {
     }
 };
 
-// ✅ Login User
+// Login User
 const loginUser = async (req, res, next) => {
     const { email, password } = req.body;
 
@@ -169,7 +169,7 @@ const resetPassword = async (req, res, next) => {
 };
 
 
-// ✅ Logout (Optional)
+//Logout (Optional)
 const logoutUser = (req, res) => {
     sendResponse(res, 200, true, "Logged out successfully");
 };

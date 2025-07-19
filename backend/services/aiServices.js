@@ -20,7 +20,7 @@ const getResponseFromLlama = async (message) => {
       ],
       model: "Meta-Llama-3.1-405B-Instruct", // Use the correct model name
     });
-    console.log("✅ Llama API response received");
+    console.log(" Llama API response received");
 
     return chatCompletion.choices[0].message.content;
   } catch (err) {

@@ -30,7 +30,7 @@ const Messages = ({ selectedUser, currentUserId, socket, onlineUsers, onlineUser
       );
       setMessages(res.data.data);
     } catch (err) {
-      console.error("❌ Failed to fetch messages:", err);
+      console.error(" Failed to fetch messages:", err);
     } finally {
       setLoading(false);
     }
@@ -63,7 +63,7 @@ const Messages = ({ selectedUser, currentUserId, socket, onlineUsers, onlineUser
       setNewMessage("");
       socket?.emit("sendMessage", sentMsg);
     } catch (err) {
-      console.error("❌ Failed to send message:", err);
+      console.error(" Failed to send message:", err);
     }
   };
 
@@ -86,7 +86,7 @@ const Messages = ({ selectedUser, currentUserId, socket, onlineUsers, onlineUser
         senderId: selectedUser._id,
       });
     } catch (err) {
-      console.error("❌ Failed to mark messages as read", err);
+      console.error(" Failed to mark messages as read", err);
     }
   };
 
@@ -177,39 +177,6 @@ const Messages = ({ selectedUser, currentUserId, socket, onlineUsers, onlineUser
 
 
   return (
-  //   <div className="w-full sm:w-[90%] md:w-[100vw] h-[100vh] sm:h-[90vh] md:h-[100vh] bg-black text-white flex flex-col px-4 sm:px-6 md:px-1 mx-auto mb-[55px] md:mt-0">
-  //     <ChatHeader
-  //       user={selectedUser}
-  //       onlineUsersList={onlineUsersList}
-  //       onlineUsers={onlineUsers}
-  //     />
-
-  //     {selectedUser?._id ? (
-  //       <>
-  //         <div className="flex-1 overflow-y-auto scroll-smooth relative" ref={scrollRef}>
-  //           <MessageList
-  //             messages={messages}
-  //             currentUserId={currentUserId}
-  //             loading={loading}
-  //             bottomRef={bottomRef}
-  //           />
-  //           <TopBottom scrollRef={scrollRef} bottomRef={bottomRef} />
-  //         </div>
-
-  //         <TypeInput
-  //           value={newMessage}
-  //           onChange={(e) => setNewMessage(e.target.value)}
-  //           onSend={handleSend}
-  //         />
-  //       </>
-  //     ) : (
-  //       <div className="flex-1 flex items-center justify-center text-gray-500 text-sm sm:text-base">
-  //         Select a user to start messaging
-  //       </div>
-  //     )}
-  //   </div>
-  // );
-
     <div className="w-full h-full bg-black text-white flex flex-col ">
       {/* Chat Header */}
       <ChatHeader

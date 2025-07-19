@@ -39,7 +39,7 @@ const CreateGroupForm = () => {
         memberEmails: memberEmails.filter(email => email.trim() !== ""),
       });
 
-      setMessage(`✅ Group "${response.data.name}" created successfully!`);
+      setMessage(`Group "${response.data.name}" created successfully!`);
 
       // Redirect to dashboard after short delay
       setTimeout(() => {
@@ -47,7 +47,7 @@ const CreateGroupForm = () => {
       }, 1500);
 
     } catch (error) {
-      setMessage(`❌ Error: ${error.response?.data?.error || "Something went wrong"}`);
+      setMessage(` Error: ${error.response?.data?.error || "Something went wrong"}`);
     }
   };
 
