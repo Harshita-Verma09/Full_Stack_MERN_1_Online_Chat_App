@@ -3,7 +3,6 @@
 A full-stack real-time chat application built with MongoDB, Express, React, Node.js, and Socket.IO. This project supports private and group messaging, AI assistant chat, authentication with OTP, and speech-to-text input.
 
 ---
-
 ## Features
 
 ### 1. **Authentication & Security**
