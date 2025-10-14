@@ -9,7 +9,7 @@ A full-stack real-time chat application built with MongoDB, Express, React, Node
 - **User Registration & Login:** Secure registration and login using JWT tokens.
 - **OTP Email Verification:** Users verify their email via a One-Time Password sent to their inbox.
 - **Forgot & Reset Password:** Users can reset their password securely via email.
-- **Private & Group CHat:** User can communicate in Group Chat and Private Chat.
+- **Private & Group Chat:** User can communicate in Group Chat and Private Chat.
 
 ### 2. **Real-Time Private Chat**
 - **Instant Messaging:** Send and receive messages in real time using Socket.IO.
