@@ -41,7 +41,7 @@ A full-stack real-time chat application built with MongoDB, Express, React, Node
 - **AI:** SambaNova Llama-3 API
 - **Email:** Nodemailer for OTP and notifications
 
----
+--
 
 ## Getting Started
 
