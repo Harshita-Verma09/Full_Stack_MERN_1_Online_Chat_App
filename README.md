@@ -34,7 +34,7 @@ A full-stack real-time chat application built with MongoDB, Express, React, Node
 
 ---
 
-## Tech Stack
+## Tech Stack.
 
 - **Frontend:** React, Vite, TailwindCSS, Socket.IO-client
 - **Backend:** Node.js, Express, MongoDB, Socket.IO
