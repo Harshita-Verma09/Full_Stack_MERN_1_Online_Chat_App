@@ -61,6 +61,7 @@ git clone https://github.com/Harshita-Verma09/MERN_1_Online_Chat_App.git
 cd MERN_1_Chat_App
 ```
 
+
 ### 2. Backend Setup
 
 - Create a `.env` file in the `backend/` folder with the following content:
