@@ -93,6 +93,7 @@ cd MERN_1_Chat_App
   npm run dev
 ```
 ### 4. Open in Browser
+
 - ** Visit http://localhost:5173 to use the app.
 
 ## Folder Structure
