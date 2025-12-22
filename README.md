@@ -12,7 +12,7 @@ A full-stack real-time chat application built with MongoDB, Express, React, Node
 - **Private & Group Chat:** User can communicate in Group Chat and Private Chat.
 
 ### 2. **Real-Time Private Chat**
-- **Instant Messaging:** Send and receive messages in real time using Socket.IO
+- **Instant Messaging:** Send and receive messages in real time using Socket.IO.
 - **Online Status:** See which users are online.
 - **Read Receipts:** Know when your messages have been read.
 - **Real Time:** Read Messages on Real Time.
