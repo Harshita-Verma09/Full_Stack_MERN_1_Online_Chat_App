@@ -5,6 +5,7 @@ A full-stack real-time chat application built with MongoDB, Express, React, Node
 ---
 ## Features
 
+
 ### 1. **Authentication & Security**
 - **User Registration & Login:** Secure registration and login using JWT tokens.
 - **OTP Email Verification:** Users verify their email via a One-Time Password sent to their inbox.
